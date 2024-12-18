@@ -1,0 +1,580 @@
+/* Ensure the body and content use full width for the background */
+html, body {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Full-width background for headers */
+header {
+    background-color: #003366;
+    color: white;
+}
+
+/* Centering content within headers */
+header .container {
+    max-width: 1200px; /* Constrain content to 1200px */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Logo section */
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+}
+
+header .logo p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #e5e5e5;
+}
+
+/* Navigation menu */
+header nav {
+    display: flex;
+    gap: 15px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #e5e5e5;
+}
+
+/* Contact Info Header */
+.contact-info-header {
+    background-color: #00509e; /* Lighter blue for the contact info header */
+    color: white;
+}
+
+.contact-info {
+    max-width: 1200px; /* Constrain contact info */
+    margin: 0 auto; /* Center the content */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-info span {
+    font-size: 14px;
+    color: #e5e5e5;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+    /* Hide navigation for smaller screens */
+    header nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #036;
+        border-radius: 5px;
+        width: 200px;
+    }
+
+    /* Show the toggle button */
+    header .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    header .menu-toggle div {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+    }
+
+    header.nav-open nav {
+        display: flex;
+    }
+
+    header nav a {
+        padding: 10px 15px;
+        border-bottom: 1px solid #5c267f;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* Full-width background wrapper for the slider */
+.slider-wrapper {
+    width: 100%; /* Full-width wrapper */
+    background-color: #3b9eee; /* Background color as fallback */
+}
+
+/* Slider container with centralized content */
+.slider {
+    max-width: 1200px; /* Limit the slider width */
+    margin: 0 auto; /* Center the slider content */
+}
+
+/* Individual slide styling */
+.slide {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+}
+
+/* Slide content styling */
+.slide-content {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Flickity custom controls */
+.flickity-button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 2rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.flickity-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Hide Flickity dots */
+.flickity-page-dots {
+    display: none;
+}
+
+/* About US */
+.about {
+    width: 100%; /* Full-width background */
+    background-color: #f9f9f9;
+    padding: 20px 0;
+}
+
+/* Centered Content */
+.about .container {
+    max-width: 1200px; /* Constrain content width to 1200px */
+    margin: 0 auto; /* Center the content horizontally */
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    align-items: center; /* Vertically center the image and paragraph */
+    justify-content: center; /* Horizontally center the content */
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* Image Section */
+.about-image {
+    flex: 1;
+    max-width: 50%; /* Image takes 50% width on larger screens */
+    padding: 10px;
+    order: 1; /* Default order: Image first */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+}
+
+.about-image img {
+    width: 100%; /* Ensure the image scales with its container */
+    max-width: 768px; /* Limit the maximum width of the image */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Section */
+.about-content {
+    flex: 1;
+    max-width: 50%; /* Content takes 50% width on larger screens */
+    padding: 10px;
+    order: 2; /* Default order: Content second */
+    text-align: left; /* Center the text horizontally */
+}
+
+.about-content h2 {
+    color: #252525;
+    margin-bottom: 15px;
+}
+
+.about-content p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+    .about .container {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .about-image {
+        max-width: 100%; /* Image takes full width */
+        order: 1; /* Ensure image stays on top */
+    }
+
+    .about-content {
+        max-width: 100%; /* Content takes full width */
+        order: 2; /* Ensure content stays below the image */
+    }
+}
+
+/* Why Choose Us */
+.features {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0; /* Adjusted to match spacing */
+    background-image: url('Background.png'); /* Add your image */
+    background-size: cover; /* Cover the entire section */
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Centered Content */
+.features .container {
+    max-width: 1200px; /* Constrain content width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 0 20px; /* Add side padding to prevent content from touching edges */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 20px; /* Spacing between grid items */
+}
+
+/* Section Heading */
+.features h2 {
+    grid-column: span 3; /* Ensure the title spans all columns */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Feature Box Styling */
+.feature {
+    position: relative;
+    text-align: center;
+    padding: 40px 20px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+    color: #003366; /* Text color */
+}
+
+/* White Background for Content */
+.feature-content {
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Icon Wrapper Styling */
+.icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px; /* Center the icon and add spacing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background for contrast */
+    border-radius: 50%; /* Make it circular */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Styling */
+.icon-wrapper i {
+    font-size: 24px; /* Adjust icon size */
+    color: #003366; /* Icon color */
+}
+
+
+/* Text Content */
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.feature p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Hover Effects */
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .features .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .features .container {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+    }
+}
+
+
+/* CTA Section Styling */
+.cta {
+    width: 100%;
+    background-image: url('background-image.jpg'); /* Replace with your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 60px 20px; /* Padding around content */
+    color: white;
+    position: relative;
+    text-align: center;
+}
+
+/* Semi-transparent overlay */
+.cta::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #3b9eee; /* Semi-transparent blue overlay */
+    z-index: 1;
+}
+
+/* Container for content */
+.cta-container {
+    position: relative;
+    z-index: 2; /* Ensure content is above overlay */
+    max-width: 800px; /* Center content in a container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+}
+
+/* Title styling */
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Subtitle styling */
+.cta p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #e6e6e6;
+}
+
+/* Button styling */
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #252525; /* Black blue text */
+    background: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effects */
+.cta-button:hover {
+    background: #003366; /* Dark blue background */
+    color: white; /* White font color */
+    cursor: pointer;
+}
+
+
+
+/* Catalog Section */
+.catalog {
+    width: 100%; /* Full-width background */
+    background-color: #f9f9f9; /* Light background color */
+    padding: 40px 0; /* Add spacing above and below */
+}
+
+/* Centered Content */
+.catalog .container {
+    max-width: 1200px; /* Constrain content width */
+    margin: 0 auto; /* Center content horizontally */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+    gap: 20px; /* Spacing between grid items */
+    padding: 0 20px; /* Add padding for smaller screens */
+}
+
+/* Section Title */
+.catalog h2 {
+    grid-column: span 3; /* Ensure the title spans all columns */
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #252525;
+    text-align: center;
+}
+
+/* Catalog Item Styling */
+.catalog-item {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white; /* White background for catalog items */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Catalog Item Image */
+.catalog-item img {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Limit the maximum height */
+    object-fit: cover; /* Ensure images cover the area */
+    border-radius: 10px; /* Add rounded corners */
+    margin-bottom: 10px;
+}
+
+/* Catalog Item Title */
+.catalog-item h3 {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Hover Effects for Catalog Items */
+.catalog-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+    .catalog .container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .catalog .container {
+        grid-template-columns: 1fr; /* 1 column for smaller screens */
+    }
+}
+
+
+
+/* footer */
+.footer {
+    background-color:  #3b9eee;
+    color: white;
+    padding: 40px 20px;
+}
+
+.footer .container {
+    max-width: 1200px;
+    display: flex;
+    margin: 0 auto; /* Center content horizontally */
+    flex-wrap: wrap;
+    justify-content: center; /* Center-align grid items */
+}
+
+.footer-column {
+    flex: 1 1 200px;
+    margin: 10px;
+}
+
+.footer-logo {
+    max-width: 45px;
+    margin-bottom: 1px;
+}
+
+.footer-column h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color:  #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: #ffffff;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.footer-social img {
+    width: 30px;
+    transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+    transform: scale(1.2);
+}
+
+.footer .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    color:  #ffffff;
+}
